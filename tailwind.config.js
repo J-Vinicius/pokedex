@@ -28,6 +28,9 @@ module.exports = {
         water: '#6493EB',
       }
     },
+    fontFamily: {
+      'mono': ['ui-monospace', 'SFMono-Regular', 'sans-serif']
+    }
   },
   plugins: [require('flowbite/plugin')],
 }
