@@ -3,6 +3,7 @@ import Navbar from "components/Navbar";
 import PokemonCard from "components/PokemonCard";
 import axios from "axios"
 import { useEffect, useState } from "react";
+import Carregamento from "components/Carregamento";
 
 const Inicio = () => {
     
@@ -40,14 +41,18 @@ const Inicio = () => {
         <main className="bg-primary h-screen">
             <Navbar pokemonFilter={pokemonFilter} />
             <Container>
-                {pokemons.map((pokemon, key) => (
-                    <PokemonCard 
-                        name={pokemon.data.name} 
-                        key={key} 
-                        imagem={pokemon.data.id}
-                        tipos={pokemon.data.types}
-                    />
-                ))}
+                {pokemons.length === 0 ? (
+                    <Carregamento />
+                    ) : (
+                        pokemons.map((pokemon, key) => (
+                        <PokemonCard 
+                            name={pokemon.data.name} 
+                            key={key} 
+                            imagem={pokemon.data.id}
+                            tipos={pokemon.data.types}
+                        />
+                    )))
+                }
             </Container>
         </main>
     );
