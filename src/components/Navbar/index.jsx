@@ -1,10 +1,11 @@
+import pokeball from '../../assets/images/pokeball.png'
 
 function Navbar({pokemonFilter}) {
     return (
         <nav className="bg-primary border-gray-200">
             <div className="max-w-screen-md md:flex items-center justify-between mx-auto p-4 grid grid-col-2 gap-2">
                 <div className="flex items-center mb-2">
-                    <img src="" className="h-8 mr-3" alt="Pokeball" />
+                    <img src={pokeball} className="h-8 mr-3" alt="Pokeball" />
                     <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Pokédex</span>
                 </div>
                 <div className="flex space-x-2 col-span-2">
