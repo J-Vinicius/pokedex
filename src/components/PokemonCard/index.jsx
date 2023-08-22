@@ -1,3 +1,8 @@
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from './tailwind.config.js'
+
+// eslint-disable-next-line no-unused-vars
+const fullConfig = resolveConfig(tailwindConfig)
 
 
 function PokemonCard({name, imagem, tipos}) {
@@ -30,9 +35,7 @@ function PokemonCard({name, imagem, tipos}) {
         }
 
         return (
-            <>
-                <li className={`text-gray-100 bg-${tipos[0].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[0].type.name}</li>
-            </>
+            <li className={`text-gray-100 bg-${tipos[0].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[0].type.name}</li>
         )
     }
 
@@ -41,7 +44,7 @@ function PokemonCard({name, imagem, tipos}) {
             <div className="w-100 flex justify-end">
                 <p className="text-gray-300 opacity-90 text-xl mr-2 mt-1 font-mono">#{fID}</p>
             </div>
-            <div className=""> 
+            <div> 
                 <img className="rounded w-fit z-50" src={url} alt={name} />
             </div>
             <div className="px-2 pt-0 bg-gradient-to-t from-gray-500 z-50">
