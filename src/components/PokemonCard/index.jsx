@@ -1,4 +1,4 @@
-import pokeball from '../../assets/images/pokeball.png'
+
 
 function PokemonCard({name, imagem, tipos}) {
 
@@ -22,17 +22,17 @@ function PokemonCard({name, imagem, tipos}) {
     const tiposPokemon = () => {
         if(tipos[1]) {
             return (
-                <ul className="flex mb-2 md:mb-0">
+                <>
                     <li className={`text-gray-100 bg-${tipos[0].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[0].type.name}</li>
                     <li className={`text-gray-100 bg-${tipos[1].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[1].type.name}</li>
-                </ul>
+                </>
             )
         }
 
         return (
-            <ul className="flex mb-2 md:mb-0">
+            <>
                 <li className={`text-gray-100 bg-${tipos[0].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[0].type.name}</li>
-            </ul>
+            </>
         )
     }
 
@@ -47,7 +47,9 @@ function PokemonCard({name, imagem, tipos}) {
             <div className="px-2 pt-0 bg-gradient-to-t from-gray-500 z-50">
                 <div className="w-full md:flex items-center justify-between">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-white capitalize">{name}</h5>
-                    {tiposPokemon()}
+                    <ul className="flex mb-2 md:mb-0">
+                        {tiposPokemon()}
+                    </ul>
                 </div>
             </div>
         </div>
