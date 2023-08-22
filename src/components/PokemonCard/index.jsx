@@ -38,13 +38,10 @@ function PokemonCard({name, imagem, tipos}) {
 
     return (
         <div className={`max-w-full border border-gray-200 rounded shadow bg-${tipos[0].type.name}`}>
-            <div className="relative">
-                <img className="absolute w-36 h-36 top-0 right-0 z-10" src={pokeball} alt="Pokebal" />
-            </div>
             <div className="w-100 flex justify-end">
                 <p className="text-gray-300 opacity-90 text-xl mr-2 mt-1 font-mono">#{fID}</p>
             </div>
-            <div className="z-50"> 
+            <div className=""> 
                 <img className="rounded w-fit z-50" src={url} alt={name} />
             </div>
             <div className="px-2 pt-0 bg-gradient-to-t from-gray-500 z-50">
