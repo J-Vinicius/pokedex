@@ -1,10 +1,3 @@
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from './tailwind.config.js'
-
-// eslint-disable-next-line no-unused-vars
-const fullConfig = resolveConfig(tailwindConfig)
-
-
 function PokemonCard({name, imagem, tipos}) {
 
     var id = parseInt(imagem)

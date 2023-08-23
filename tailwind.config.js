@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': '#DC0A2D',
+        primary: '#dc0a2d',
         'bug': '#A7B723',
         'dark': '#75574C',
         'dragon': '#7037FF',
@@ -25,7 +25,7 @@ module.exports = {
         'psychic': '#FB5584',
         'rock': '#B69E31',
         'steel': '#B7B9D0',
-        'water': '#6493EB'
+        'water': '#6493EB',
       }
     },
     fontFamily: {
