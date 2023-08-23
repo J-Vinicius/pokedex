@@ -7,10 +7,10 @@ Um projeto feito em React.
 | :placard: Vitrine.Dev | Pokédex |
 | --- | --- |
 | :label: Tecnologias | React, Javascript, Flowbite, Tailwind-CSS |
-| :youtube: Youtube | ![Criando uma Pokédex com React.JS e PokeAPI](https://www.youtube.com/watch?v=dqMae44pEVk) |
-| 🔗 Link do Projeto | https://url-deploy.com.br |
+| 🟥 Youtube | ![Criando uma Pokédex com React.JS e PokeAPI](https://www.youtube.com/watch?v=dqMae44pEVk) |
+| 🔗 Link do Projeto | https://pokedex-dun-five.vercel.app |
 
-![Pokedex](https://github.com/J-Vinicius/cinetag/assets/80431647/77159825-73ad-4e6d-b433-fda46130e60f#vitrinedev)
+<!-- ![Pokedex](https://github.com/J-Vinicius/#vitrinedev) -->
 
 ## Estilização
 
