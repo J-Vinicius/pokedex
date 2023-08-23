@@ -10,7 +10,7 @@ Um projeto feito em React.
 | 🟥 Youtube | ![Criando uma Pokédex com React.JS e PokeAPI](https://www.youtube.com/watch?v=dqMae44pEVk) |
 | 🔗 Link do Projeto | https://pokedex-dun-five.vercel.app |
 
-![Pokedex](https://github.com/J-Vinicius/#vitrinedev)
+<!-- ![Pokedex](https://github.com/J-Vinicius/#vitrinedev) -->
 
 ## Estilização
 
