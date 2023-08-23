@@ -25,7 +25,8 @@ const Inicio = () => {
 
     const pokemonFilter = (name) => {
         var filtredPokemons = [];
-
+        name.toLowerCase();
+        
         if (name === "") {
             getPokemons();
         }

@@ -17,35 +17,35 @@ function PokemonCard({name, imagem, tipos}) {
         fID = `${id}`
     }
 
-    const tiposPokemon = () => {
-        if(tipos[1]) {
-            return (
-                <>
-                    <li className={`text-gray-100 bg-${tipos[0].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[0].type.name}</li>
-                    <li className={`text-gray-100 bg-${tipos[1].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[1].type.name}</li>
-                </>
-            )
-        }
+    // const tiposPokemon = () => {
+    //     if(tipos[1]) {
+    //         return (
+    //             <>
+    //                 <li className={`text-gray-100 bg-${tipos[0].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[0].type.name}</li>
+    //                 <li className={`text-gray-100 bg-${tipos[1].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[1].type.name}</li>
+    //             </>
+    //         )
+    //     }
 
-        return (
-            <li className={`text-gray-100 bg-${tipos[0].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[0].type.name}</li>
-        )
-    }
+    //     return (
+    //         <li className={`text-gray-100 bg-${tipos[0].type.name} capitalize drop-shadow-xl text-xs font-semibold w-fit h-fit mr-2 px-2.5 py-0.5 rounded`}>{tipos[0].type.name}</li>
+    //     )
+    // }
 
     return (
-        <div className={`max-w-full border border-gray-200 rounded shadow bg-${tipos[0].type.name}`}>
+        <div className={`max-w-full border border-gray-200 rounded shadow bg-${tipos[0].type.name} bg-fundoPokemon bg-right-top`}>
             <div className="w-100 flex justify-end">
-                <p className="text-gray-300 opacity-90 text-xl mr-2 mt-1 font-mono">#{fID}</p>
+                <p className="text-gray-300 opacity-80 text-xl mr-2 mt-1 font-mono">#{fID}</p>
             </div>
             <div> 
                 <img className="rounded w-fit z-50" src={url} alt={name} />
             </div>
             <div className="px-2 pt-0 bg-gray-800 from-gray-500 z-50">
                 <div className="py-2 w-full flex-inline items-center justify-between">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-white capitalize">{name}</h5>
-                    <ul className="flex mb-2 md:mb-0">
+                    <h5 className=" text-center text-2xl font-bold tracking-tight text-white capitalize">{name}</h5>
+                    {/* <ul className="flex mb-2 md:mb-0">
                         {tiposPokemon()}
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         </div>

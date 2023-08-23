@@ -26,6 +26,9 @@ module.exports = {
         rock: '#B69E31',
         steel: '#B7B9D0',
         water: '#6493EB',
+      },
+      backgroundImage: {
+        'fundoPokemon': "url('./assets/images/FundoPokemon(1).png')",
       }
     },
     fontFamily: {
