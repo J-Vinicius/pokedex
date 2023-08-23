@@ -32,6 +32,9 @@ module.exports = {
       'mono': ['ui-monospace', 'SFMono-Regular', 'sans-serif']
     }
   },
-  plugins : [require('flowbite/plugin')]
+  plugins : [require('flowbite/plugin')],
+  safelist: [
+    {pattern: /(bg|text|border)-(primary|bug|dark|dragon|electric|fairy|fighting|fire|flying|ghost|normal|grass|ground|ice|poison|psychic|rock|steel|water)/}
+  ]
 }
 

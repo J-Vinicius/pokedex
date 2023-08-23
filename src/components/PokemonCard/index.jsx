@@ -40,8 +40,8 @@ function PokemonCard({name, imagem, tipos}) {
             <div> 
                 <img className="rounded w-fit z-50" src={url} alt={name} />
             </div>
-            <div className="px-2 pt-0 bg-gradient-to-t from-gray-500 z-50">
-                <div className="w-full md:flex items-center justify-between">
+            <div className="px-2 pt-0 bg-gray-800 from-gray-500 z-50">
+                <div className="py-2 w-full flex-inline items-center justify-between">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-white capitalize">{name}</h5>
                     <ul className="flex mb-2 md:mb-0">
                         {tiposPokemon()}
