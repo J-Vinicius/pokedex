@@ -4,10 +4,13 @@ import PokemonCard from "components/PokemonCard";
 import axios from "axios"
 import { useEffect, useState } from "react";
 import Carregamento from "components/Carregamento";
+import { Link, useNavigate } from "react-router-dom";
 
-const Inicio = () => {
+const Inicio = ({setPokemonData}) => {
     
     const [pokemons, setPokemons] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         getPokemons();
@@ -38,6 +41,11 @@ const Inicio = () => {
         setPokemons(filtredPokemons);
     }
 
+    const pokemonPickHandler = (pokemonData) => {
+        setPokemonData(pokemonData);
+        navigate(`/info/${pokemonData.id}/${pokemonData.name}`);
+    }
+
     return (
         <main className="bg-primary h-screen">
             <Navbar pokemonFilter={pokemonFilter} />
@@ -46,12 +54,15 @@ const Inicio = () => {
                     <Carregamento />
                     ) : (
                         pokemons.map((pokemon, key) => (
-                        <PokemonCard 
-                            name={pokemon.data.name} 
-                            key={key} 
-                            imagem={pokemon.data.id}
-                            tipos={pokemon.data.types}
-                        />
+                        <button onClick={() => pokemonPickHandler(pokemon.data)}>
+                            <PokemonCard 
+                                name={pokemon.data.name} 
+                                key={key} 
+                                imagem={pokemon.data.id}
+                                tipos={pokemon.data.types}
+                                
+                            />
+                        </button>
                     )))
                 }
             </Container>

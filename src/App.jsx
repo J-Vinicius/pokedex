@@ -1,8 +1,8 @@
-import Inicio from "pages/Inicio";
+import { Router } from "./router";
 
 function App() {
   return (
-    <Inicio />
+    <Router />
   );
 }
 
