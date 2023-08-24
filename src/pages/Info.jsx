@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { TbWeight } from 'react-icons/tb';
+import { MdHeight } from 'react-icons/md';
 
 export const Info = ({ pokemonData }) => {
 
@@ -28,6 +30,23 @@ export const Info = ({ pokemonData }) => {
         )
     }
 
+    const movimentosPokemon = () => {
+        for(var i = 0; i < 5; i++) {
+            return (<li className={`text-gray-100 capitalize list-none`}>{pokemonData.abilities[i]}</li>)
+        }
+    }
+
+    const pesoPokemon = (pesoPokemon) => {
+        if(pokemonData.weight >= 9) {
+            return (pesoPokemon = pokemonData.weight / 10)
+        } 
+        return (pesoPokemon = pokemonData.weight)
+    }
+
+    const alturaPokemon = (altPokemon) => {
+        return (altPokemon = pokemonData.height / 10)
+    }
+
     
     
     return (
@@ -44,7 +63,7 @@ export const Info = ({ pokemonData }) => {
                     <p className="text-sm text-white">#{fID}</p>
                 </div>
             </nav>
-            <div className={`p-12 w-full bg-${tipoColor}`}>
+            <div className={`p-12 -mt-10 w-full bg-${tipoColor}`}>
                 <img className="self-center h-10/12 w-full" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${fID}.png`} alt={pokemonData.name} />
             </div>
             <section className="h-full -mt-32 pt-32 max-w-full bg-gray-100 pt-24 rounded mx-1 my-2 pb-4">
@@ -52,7 +71,26 @@ export const Info = ({ pokemonData }) => {
                     {tiposPokemon()}
                 </div>
                 <h2 className={`w-full flex items-center justify-center my-4 text-${tipoColor} text-lg font-bold`}>About</h2>
-                <p class="w-full flex items-center justify-center p-4 text-base break-words box-border">{pokemonData.height}</p>
+                <div className="h-full grid grid-cols-3 mx-2">
+                    <div className="grid gap-1 h-full">
+                            <div className="flex items-center justify-center gap-2">
+                            <TbWeight className="w-8 h-8"/>
+                            <p>{pesoPokemon()}Kg</p>
+                    </div>
+                        <p className="w-full flex items-center justify-center text-gray-600">Weight</p>
+                    </div>
+                    <div className="grid gap-1 h-full">
+                        <div className="flex items-center justify-center gap-2">
+                            <MdHeight className="w-8 h-8"/>
+                            <p>{alturaPokemon()}m</p>
+                        </div>
+                        <p className="w-full flex items-center justify-center text-gray-600">Height</p>
+                    </div>
+                    <div className="grid gap-1 h-full">
+                        <ul>{movimentosPokemon()}</ul>
+                        <p className="w-full flex items-center justify-center text-gray-600">Moves</p>
+                    </div>
+                </div>
             </section>
         </div>
     </div>
