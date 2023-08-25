@@ -3,8 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { TbWeight } from 'react-icons/tb';
 import { MdHeight } from 'react-icons/md';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { pokemonId, pokemonMoves, pokemonTipos } from 'utils';
-import axios from 'axios';
+import { Status, pokemonId, pokemonMoves, pokemonTipos } from 'utils';
 
 export const Info = ({ pokemonData }) => {
 
@@ -32,15 +31,7 @@ export const Info = ({ pokemonData }) => {
 
     const alturaPokemon = (altPokemon) => {
         return (altPokemon = pokemonData.height / 10)
-    }
-
-    const pokemonDesc = () => {
-        const desc = pokemonData.species.url
-        console.log(desc);
-        fetch(desc).then(response => console.log(response.json()))
-    }
-
-    
+    } 
     
     return (
     <div className={`w-full bg-${tipoColor}`}>
@@ -63,45 +54,44 @@ export const Info = ({ pokemonData }) => {
                 </div>
                 <h2 className={`w-full flex items-center justify-center my-4 text-${tipoColor} text-lg font-bold`}>About</h2>
                 <div className="grid grid-cols-3 mx-2">
-                    <div className="grid gap-1 h-full">
+                    <div className="grid gap-1 h-100">
                             <div className="flex items-center justify-center gap-2">
                             <TbWeight className="w-8 h-8"/>
                             <p>{pesoPokemon()}Kg</p>
                     </div>
                         <p className="w-full flex items-center justify-center text-gray-600">Weight</p>
                     </div>
-                    <div className="grid gap-1 h-full">
+                    <div className="grid gap-1 h-100">
                         <div className="flex items-center justify-center gap-2">
                             <MdHeight className="w-8 h-8"/>
                             <p>{alturaPokemon()}m</p>
                         </div>
                         <p className="w-full flex items-center justify-center text-gray-600">Height</p>
                     </div>
-                    <div className="grid gap-1 h-full">
+                    <div className="grid gap-1 h-100">
                         <ul className="text-center">{pokemonMoves(abilities)}</ul>
                         <p className="w-full flex items-center justify-center text-gray-600">Moves</p>
                     </div>
                 </div>
-                <h3>{pokemonDesc}</h3>
-                {/* <h2 className={`w-full flex items-center justify-center my-4 text-${tipoColor} text-lg font-bold`}>Status Base</h2>
+                <h2 className={`w-full flex items-center justify-center my-4 text-${tipoColor} text-lg font-bold`}>Status Base</h2>
                 <div className="mx-4">
                     <table className="w-full text-sm text-right text-black border-spacing-x-2">
                         <tbody>
                             <tr>
-                                <th scope="row" className="text-[#74cb48] text-lg font-medium">
+                                <th scope="row" className={`text-${tipoColor} text-lg font-medium uppercase`}>
                                     HP
                                 </th>
                                 <td className="pr-2">
-                                    045
+                                    0{Status(pokemonData.stats)}
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className="bg-[#74cb48] h-2.5 rounded-full w-[55%]"></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row" className="text-[#74cb48] text-lg font-medium">
+                                <th scope="row" className={`text-${tipoColor} text-lg font-medium uppercase`}>
                                     ATK
                                 </th>
                                 <td className="pr-2">
@@ -109,12 +99,12 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className="bg-[#74cb48] h-2.5 rounded-full w-[50%]"></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row" className="text-[#74cb48] text-lg font-medium">
+                                <th scope="row" className={`text-${tipoColor} text-lg font-medium uppercase`}>
                                     DEF
                                 </th>
                                 <td className="pr-2">
@@ -122,12 +112,12 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className="bg-[#74cb48] h-2.5 rounded-full w-[50%]"></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row" className="text-[#74cb48] text-lg font-medium">
+                                <th scope="row" className={`text-${tipoColor} text-lg font-medium uppercase`}>
                                     SATK
                                 </th>
                                 <td className="pr-2">
@@ -135,12 +125,12 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className="bg-[#74cb48] h-2.5 rounded-full w-[50%]"></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row" className="text-[#74cb48] text-lg font-medium">
+                                <th scope="row" className={`text-${tipoColor} text-lg font-medium uppercase`}>
                                     SDEF
                                 </th>
                                 <td className="pr-2">
@@ -148,12 +138,12 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td className="w-9/12">
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className="bg-[#74cb48] h-2.5 rounded-full w-[50%]"></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
                                     </div>
                                 </td>
                             </tr>
-                        <tr>
-                                <th scope="row" className="text-[#74cb48] text-lg font-medium">
+                            <tr>
+                                <th scope="row" className={`text-${tipoColor} text-lg font-medium uppercase`}>
                                     SPD
                                 </th>
                                 <td className="pr-2">
@@ -161,13 +151,13 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td className="w-9/12">
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className="bg-[#74cb48] h-2.5 rounded-full w-[50%]"></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                </div> */}
+                </div>
             </section>
         </div>
     </div>
