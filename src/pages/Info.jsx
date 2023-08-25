@@ -13,6 +13,7 @@ export const Info = ({ pokemonData }) => {
         fID = `${pokemonData.id}`
     }
 
+
     const tipoColor = pokemonData.types[0].type.name;
 
     const tiposPokemon = () => {
@@ -31,8 +32,8 @@ export const Info = ({ pokemonData }) => {
     }
 
     const movimentosPokemon = () => {
-        for(var i = 0; i < 5; i++) {
-            return (<li className={`text-gray-100 capitalize list-none`}>{pokemonData.abilities[i]}</li>)
+        for (var i = 0; i < 5; i++) { 
+            <li className={`text-gray-800 capitalize list-none`}>{pokemonData.abilities[i].ability.name}</li>
         }
     }
 
@@ -56,7 +57,7 @@ export const Info = ({ pokemonData }) => {
                 <div className="flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link to='/' className="flex items-center gap-x-4">
                         <svg className="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
                         </svg>
                     </Link>
                     <h2 className="self-center text-2xl font-semibold whitespace-nowrap capitalize text-white">{pokemonData.name}</h2>
