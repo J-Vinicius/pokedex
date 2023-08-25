@@ -99,7 +99,7 @@ export const Info = ({ pokemonData }) => {
                         <p className="w-full flex items-center justify-center text-gray-600">Moves</p>
                     </div>
                 </div>
-                <h2 className={`w-full flex items-center justify-center my-4 text-${tipoColor} text-lg font-bold`}>Status Base</h2>
+                {/* <h2 className={`w-full flex items-center justify-center my-4 text-${tipoColor} text-lg font-bold`}>Status Base</h2>
                 <div className="mx-4">
                     <table className="w-full text-sm text-right text-black border-spacing-x-2">
                         <tbody>
@@ -183,7 +183,7 @@ export const Info = ({ pokemonData }) => {
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> */}
             </section>
         </div>
     </div>
