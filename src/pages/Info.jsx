@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { TbWeight } from 'react-icons/tb';
 import { MdHeight } from 'react-icons/md';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { Status, pokemonId, pokemonMoves, pokemonTipos } from 'utils';
+import {  pokemonId, pokemonMoves, pokemonTipos } from 'utils';
 
 export const Info = ({ pokemonData }) => {
 
