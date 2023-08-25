@@ -35,7 +35,7 @@ export const Info = ({ pokemonData }) => {
     
     return (
     <div className={`w-full bg-${tipoColor}`}>
-        <div className="max-w-[400px] mx-auto">
+        <div className="max-w-lg mx-auto">
             <nav className={`border-gray-200 bg-${tipoColor} text-green-300`}>
                 <div className="flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link to='/' className="flex items-center gap-x-4">
@@ -82,7 +82,7 @@ export const Info = ({ pokemonData }) => {
                                     HP
                                 </th>
                                 <td className="pr-2">
-                                    0{Status(pokemonData.stats)}
+                                    {pokemonData.stats[0].base_stat}
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -95,7 +95,7 @@ export const Info = ({ pokemonData }) => {
                                     ATK
                                 </th>
                                 <td className="pr-2">
-                                    049
+                                    {pokemonData.stats[1].base_stat}
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -108,7 +108,7 @@ export const Info = ({ pokemonData }) => {
                                     DEF
                                 </th>
                                 <td className="pr-2">
-                                    049
+                                    {pokemonData.stats[2].base_stat}
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -121,7 +121,7 @@ export const Info = ({ pokemonData }) => {
                                     SATK
                                 </th>
                                 <td className="pr-2">
-                                    065
+                                    {pokemonData.stats[3].base_stat}
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -134,7 +134,7 @@ export const Info = ({ pokemonData }) => {
                                     SDEF
                                 </th>
                                 <td className="pr-2">
-                                    065
+                                    {pokemonData.stats[4].base_stat}
                                 </td>
                                 <td className="w-9/12">
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -147,11 +147,11 @@ export const Info = ({ pokemonData }) => {
                                     SPD
                                 </th>
                                 <td className="pr-2">
-                                    045
+                                    {pokemonData.stats[5].base_stat}
                                 </td>
                                 <td className="w-9/12">
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-[${pokemonData.stats[5].base_stat}%]`}></div>
                                     </div>
                                 </td>
                             </tr>

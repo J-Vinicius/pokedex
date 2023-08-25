@@ -69,20 +69,20 @@ export const ImagemPokemon = (imagem) => {
 }
 
 // - Status
-export const Status = (status) => {
-    var hpV = status[0].base_stat
-    var attackV = status[1].base_stat
-    var defenseV = status[2].base_stat
-    var specialAttackV = status[3].base_stat
-    var specialDefenseV = status[4].base_stat
-    var speedV = status[5].base_stat
+// export const Status = (status) => {
+//     var hpV = status[0].base_stat
+//     var attackV = status[1].base_stat
+//     var defenseV = status[2].base_stat
+//     var specialAttackV = status[3].base_stat
+//     var specialDefenseV = status[4].base_stat
+//     var speedV = status[5].base_stat
 
-    return (
-        hpV,
-        attackV,
-        defenseV,
-        specialAttackV,
-        specialDefenseV,
-        speedV
-    )
-}
+//     return (
+//         hpV,
+//         attackV,
+//         defenseV,
+//         specialAttackV,
+//         specialDefenseV,
+//         speedV
+//     )
+// }
