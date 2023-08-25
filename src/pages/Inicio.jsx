@@ -61,7 +61,6 @@ const Inicio = ({setPokemonData}) => {
                                 name={pokemon.data.name}
                                 imagem={pokemon.data.id}
                                 tipos={pokemon.data.types}
-                                
                             />
                         </button>
                     )))
