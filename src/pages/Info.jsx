@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { TbWeight } from 'react-icons/tb';
-import { MdHeight } from 'react-icons/md';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
-import {  pokemonId, pokemonMoves, pokemonTipos } from 'utils';
+import { alturaPokemon, pesoPokemon, pokemonId, pokemonMoves, pokemonTipos } from 'utils';
+import { PokeNav } from 'components/PokeNav';
+import { PokeImg } from 'components/PokeImg';
+import { PokeTitulo } from 'components/PokeTitulo';
+import { PokeInfo } from 'components/PokeInfo';
 
 export const Info = ({ pokemonData }) => {
 
@@ -22,60 +23,31 @@ export const Info = ({ pokemonData }) => {
     const tipoColor = pokemonData.types[0].type.name;
 
 
-    const pesoPokemon = (pesoPokemon) => {
-        if(pokemonData.weight >= 9) {
-            return (pesoPokemon = pokemonData.weight / 10)
-        } 
-        return (pesoPokemon = pokemonData.weight)
-    }
+    // const pesoPokemon = (pesoPokemon) => {
+    //     if(pokemonData.weight >= 9) {
+    //         return (pesoPokemon = pokemonData.weight / 10)
+    //     } 
+    //     return (pesoPokemon = pokemonData.weight)
+    // }
 
-    const alturaPokemon = (altPokemon) => {
-        return (altPokemon = pokemonData.height / 10)
-    } 
+    // const alturaPokemon = (altPokemon) => {
+    //     return (altPokemon = pokemonData.height / 10)
+    // } 
     
     return (
     <div className={`w-full bg-${tipoColor}`}>
         <div className="max-w-lg mx-auto">
-            <nav className={`border-gray-200 bg-${tipoColor} text-green-300`}>
-                <div className="flex flex-wrap items-center justify-between mx-auto p-4">
-                    <Link to='/' className="flex items-center gap-x-4">
-                        <AiOutlineArrowLeft className="w-6 h-6 text-white"/>
-                    </Link>
-                    <h2 className="self-center text-2xl font-semibold whitespace-nowrap capitalize text-white">{pokemonData.name}</h2>
-                    <p className="text-sm text-white">#{pokemonId(pokemonData.id)}</p>
-                </div>
-            </nav>
-            <div className={`-mt-10 w-full bg-${tipoColor}`}>
-                <img className="self-center h-10/12 w-full p-12" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemonId(pokemonData.id)}.png`} alt={pokemonData.name} />
-            </div>
+            <PokeNav tipo={pokemonData.types[0].type.name} nome={pokemonData.name} id={pokemonData.id}/>
+            <PokeImg tipo={pokemonData.types[0].type.name} nome={pokemonData.name} id={pokemonData.id}/>
             <section className="h-fit -mt-32 pt-32 max-w-full bg-gray-100 pt-24 rounded mx-1 my-2 pb-4">
                 <div className="w-full -mt-12 flex items-center justify-center space-x-2 capitalize">
                     {pokemonTipos(pokemonData.types)}
                 </div>
-                <h2 className={`w-full flex items-center justify-center my-4 text-${tipoColor} text-lg font-bold`}>About</h2>
-                <div className="grid grid-cols-3 mx-2">
-                    <div className="grid gap-1 h-100">
-                            <div className="flex items-center justify-center gap-2">
-                            <TbWeight className="w-8 h-8"/>
-                            <p>{pesoPokemon()}Kg</p>
-                    </div>
-                        <p className="w-full flex items-center justify-center text-gray-600">Weight</p>
-                    </div>
-                    <div className="grid gap-1 h-100">
-                        <div className="flex items-center justify-center gap-2">
-                            <MdHeight className="w-8 h-8"/>
-                            <p>{alturaPokemon()}m</p>
-                        </div>
-                        <p className="w-full flex items-center justify-center text-gray-600">Height</p>
-                    </div>
-                    <div className="grid gap-1 h-100">
-                        <ul className="text-center">{pokemonMoves(abilities)}</ul>
-                        <p className="w-full flex items-center justify-center text-gray-600">Moves</p>
-                    </div>
-                </div>
-                <h2 className={`w-full flex items-center justify-center my-4 text-${tipoColor} text-lg font-bold`}>Status Base</h2>
-                <div className="mx-1">
-                    <table className="w-full text-sm text-right text-black border-spacing-x-2">
+                <PokeTitulo tipo={pokemonData.types[0].type.name}>About</PokeTitulo>
+                <PokeInfo peso={pokemonData.weight} altura={pokemonData.height} habilidades={abilities} />
+                <PokeTitulo tipo={pokemonData.types[0].type.name}>Status Base</PokeTitulo>
+                <div className="">
+                    <table className="w-96 mx-auto text-sm text-right text-black border-spacing-x-2">
                         <tbody>
                             <tr>
                                 <th scope="row" className={`text-${tipoColor} text-lg font-medium uppercase`}>

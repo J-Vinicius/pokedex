@@ -68,21 +68,17 @@ export const ImagemPokemon = (imagem) => {
     return url
 }
 
-// - Status
-// export const Status = (status) => {
-//     var hpV = status[0].base_stat
-//     var attackV = status[1].base_stat
-//     var defenseV = status[2].base_stat
-//     var specialAttackV = status[3].base_stat
-//     var specialDefenseV = status[4].base_stat
-//     var speedV = status[5].base_stat
+// - Peso
+export const pesoPokemon = (pokeWeight) => {
+    var pesoPokemon
+    if(pokeWeight >= 9) {
+        return (pesoPokemon = pokeWeight / 10)
+    } 
+    return (pesoPokemon === pokeWeight)
+}
 
-//     return (
-//         hpV,
-//         attackV,
-//         defenseV,
-//         specialAttackV,
-//         specialDefenseV,
-//         speedV
-//     )
-// }
+// - Altura
+export const alturaPokemon = (pokeAlt) => {
+    var altPokemon = pokeAlt / 10
+    return altPokemon
+} 

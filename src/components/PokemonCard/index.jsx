@@ -12,7 +12,6 @@ function PokemonCard({name, imagem, tipos}) {
             <div className="px-2 pt-0 bg-gray-800 from-gray-500 z-50">
                 <div className="py-2 w-full flex items-center justify-between">
                     <h5 className="text-2xl font-bold tracking-tight text-white capitalize">{name}</h5>
-                    <img class="w-4 h-4" src={`./assets/tipos/bug.png`} alt={tipos[0].type.name} />
                 </div>
             </div>
         </div>
