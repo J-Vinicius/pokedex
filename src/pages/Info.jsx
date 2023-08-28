@@ -86,7 +86,7 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-p${pokemonData.stats[0].base_stat}`}></div>
                                     </div>
                                 </td>
                             </tr>
@@ -99,7 +99,7 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-p${pokemonData.stats[1].base_stat}`}></div>
                                     </div>
                                 </td>
                             </tr>
@@ -112,7 +112,7 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-p${pokemonData.stats[2].base_stat}`}></div>
                                     </div>
                                 </td>
                             </tr>
@@ -125,7 +125,7 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td>
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-p${pokemonData.stats[3].base_stat}`}></div>
                                     </div>
                                 </td>
                             </tr>
@@ -138,7 +138,7 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td className="w-9/12">
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-`}></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-p${pokemonData.stats[4].base_stat}`}></div>
                                     </div>
                                 </td>
                             </tr>
@@ -151,7 +151,7 @@ export const Info = ({ pokemonData }) => {
                                 </td>
                                 <td className="w-9/12">
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-[${pokemonData.stats[5].base_stat}%]`}></div>
+                                        <div className={`bg-${tipoColor} h-2.5 rounded-full w-p${pokemonData.stats[5].base_stat}`}></div>
                                     </div>
                                 </td>
                             </tr>
