@@ -74,7 +74,7 @@ export const Info = ({ pokemonData }) => {
                     </div>
                 </div>
                 <h2 className={`w-full flex items-center justify-center my-4 text-${tipoColor} text-lg font-bold`}>Status Base</h2>
-                <div className="mx-4">
+                <div className="mx-1">
                     <table className="w-full text-sm text-right text-black border-spacing-x-2">
                         <tbody>
                             <tr>
