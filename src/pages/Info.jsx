@@ -21,7 +21,6 @@ export const Info = ({ pokemonData }) => {
         return null;
     }
 
-    
     const tipoColor = pokemonData.types[0].type.name;
     
     return (

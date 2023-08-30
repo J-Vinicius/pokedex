@@ -74,6 +74,11 @@ export const pokemonTipos = (tipos) => {
     )
 }
 
+// - Bagdes 
+export const badgePokemons = (tipos) => {
+    <div className={`w-8 h-8 bg bg-${tipos[0].type.name}T bg-contain rounded-full`}></div>
+}
+
 // - Imagem Pokemon
 
 export const ImagemPokemon = (imagem) => {

@@ -1,6 +1,8 @@
-import { pokemonId, ImagemPokemon } from 'utils';
+import { pokemonId, ImagemPokemon, badgePokemons } from 'utils';
 
 function PokemonCard({name, imagem, tipos}) {
+
+
     return (
         <div className={`max-w-full border border-gray-200 rounded shadow bg-${tipos[0].type.name} bg-fundoPokemon bg-no-repeat bg-left-top`}>
             <div className="w-100 flex justify-end">
@@ -12,6 +14,7 @@ function PokemonCard({name, imagem, tipos}) {
             <div className="px-2 pt-0 bg-gray-800 from-gray-500 z-50">
                 <div className="py-2 w-full flex items-center justify-between">
                     <h5 className="text-2xl font-bold tracking-tight text-white capitalize">{name}</h5>
+                    {badgePokemons(tipos)}
                     <div className={`w-8 h-8 bg bg-${tipos[0].type.name}T bg-contain rounded-full`}></div>
                 </div>
             </div>
