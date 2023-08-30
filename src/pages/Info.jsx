@@ -36,7 +36,6 @@ export const Info = ({ pokemonData }) => {
                 <PokeTitulo tipo={pokemonData.types[0].type.name}>About</PokeTitulo>
                 <PokeInfo peso={pokemonData.weight} altura={pokemonData.height} habilidades={abilities} />
                 {/* Descrção Pokemon */}
-                <img className="w-4 h-4 rounded-full" src={tipo} alt="tipo pokemon" />
                 <PokeDesc data={pokemonData} />
                 <PokeTitulo tipo={pokemonData.types[0].type.name}>Status Base</PokeTitulo>
                 <div className="ml-10 w-[400px]">

@@ -23,7 +23,9 @@ export const pokemonMoves = (abilities) => {
         )
     }
     return (
-        <li className={`text-gray-800 capitalize list-none`}>{abilities[0].ability.name}</li>
+        <li className={`text-gray-800 capitalize list-none`}>
+            <p>{abilities[0].ability.name}</p>
+        </li>
     )
 }
 
@@ -31,27 +33,42 @@ export const pokemonMoves = (abilities) => {
 // - Types
 export const pokemonTipos = (tipos) => {
 
-    const estiloChip = "text-white font-medium mr-2 px-2.5 py-0.5 rounded-full capitalize list-none"
+    const estiloChip = "text-white font-medium mr-2 px-2.5 py-0.5 rounded-full capitalize list-none flex items-center space-x-2 pl-0"
 
     if(tipos[2]) {
         return (
             <>
-                <li className={`bg-${tipos[0].type.name} ${estiloChip}`}>{tipos[0].type.name}</li>
-                <li className={`bg-${tipos[1].type.name} ${estiloChip}`}>{tipos[1].type.name}</li>
-                <li className={`bg-${tipos[2].type.name} ${estiloChip}`}>{tipos[2].type.name}</li>
+                <li className={`bg-${tipos[0].type.name} ${estiloChip}`}>
+                    <div className={`w-8 h-8 bg bg-${tipos[0].type.name}T bg-contain rounded-full scale-110`}></div>
+                    <p>{tipos[0].type.name}</p>
+                </li>
+                <li className={`bg-${tipos[1].type.name} ${estiloChip}`}>
+                    <div className={`w-8 h-8 bg bg-${tipos[1].type.name}T bg-contain rounded-full scale-110`}></div>
+                    <p>{tipos[1].type.name}</p>
+                </li>
+                <li className={`bg-${tipos[2].type.name} ${estiloChip}`}>
+                    <div className={`w-8 h-8 bg bg-${tipos[2].type.name}T bg-contain rounded-full scale-110`}></div>
+                    <p>{tipos[2].type.name}</p>
+                </li>
             </>
         )
     } else if (tipos[1]) {
         return (
             <>
-                <li className={`bg-${tipos[0].type.name} ${estiloChip}`}>{tipos[0].type.name}</li>
-                <li className={`bg-${tipos[1].type.name} ${estiloChip}`}>{tipos[1].type.name}</li>
+                <li className={`bg-${tipos[0].type.name} ${estiloChip}`}>
+                    <div className={`w-8 h-8 bg bg-${tipos[0].type.name}T bg-contain rounded-full scale-110`}></div>
+                    <p>{tipos[0].type.name}</p>
+                </li>
+                <li className={`bg-${tipos[1].type.name} ${estiloChip}`}>
+                    <div className={`w-8 h-8 bg bg-${tipos[1].type.name}T bg-contain rounded-full scale-110`}></div>
+                    <p>{tipos[1].type.name}</p>
+                </li>
             </>
         )
     }
     return (
         <li className={`bg-${tipos[0].type.name} ${estiloChip}`}>
-            
+            <div className={`w-8 h-8 bg bg-${tipos[0].type.name}T bg-contain rounded-full scale-110`}></div>
             <p>{tipos[0].type.name}</p>
         </li>
     )
