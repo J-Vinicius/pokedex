@@ -50,7 +50,10 @@ export const pokemonTipos = (tipos) => {
         )
     }
     return (
-        <li className={`bg-${tipos[0].type.name} ${estiloChip}`}>{tipos[0].type.name}</li>
+        <li className={`bg-${tipos[0].type.name} ${estiloChip}`}>
+            
+            <p>{tipos[0].type.name}</p>
+        </li>
     )
 }
 

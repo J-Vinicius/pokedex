@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { alturaPokemon, pesoPokemon, pokemonId, pokemonMoves, pokemonTipos } from 'utils';
+import { useNavigate } from 'react-router-dom'
+import { pokemonTipos } from 'utils';
 import { PokeNav } from 'components/PokeNav';
 import { PokeImg } from 'components/PokeImg';
 import { PokeTitulo } from 'components/PokeTitulo';
 import { PokeInfo } from 'components/PokeInfo';
+import { PokeDesc } from 'components/PokeDesc';
 
 export const Info = ({ pokemonData }) => {
 
@@ -20,19 +21,8 @@ export const Info = ({ pokemonData }) => {
         return null;
     }
 
+    
     const tipoColor = pokemonData.types[0].type.name;
-
-
-    // const pesoPokemon = (pesoPokemon) => {
-    //     if(pokemonData.weight >= 9) {
-    //         return (pesoPokemon = pokemonData.weight / 10)
-    //     } 
-    //     return (pesoPokemon = pokemonData.weight)
-    // }
-
-    // const alturaPokemon = (altPokemon) => {
-    //     return (altPokemon = pokemonData.height / 10)
-    // } 
     
     return (
     <div className={`w-full bg-${tipoColor}`}>
@@ -45,9 +35,12 @@ export const Info = ({ pokemonData }) => {
                 </div>
                 <PokeTitulo tipo={pokemonData.types[0].type.name}>About</PokeTitulo>
                 <PokeInfo peso={pokemonData.weight} altura={pokemonData.height} habilidades={abilities} />
+                {/* Descrção Pokemon */}
+                <img className="w-4 h-4 rounded-full" src={tipo} alt="tipo pokemon" />
+                <PokeDesc data={pokemonData} />
                 <PokeTitulo tipo={pokemonData.types[0].type.name}>Status Base</PokeTitulo>
-                <div className="">
-                    <table className="w-96 mx-auto text-sm text-right text-black border-spacing-x-2">
+                <div className="ml-10 w-[400px]">
+                    <table className="w-full text-sm text-right text-black border-spacing-x-2">
                         <tbody>
                             <tr>
                                 <th scope="row" className={`text-${tipoColor} text-lg font-medium uppercase`}>
