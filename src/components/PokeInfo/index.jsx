@@ -5,7 +5,7 @@ import { alturaPokemon, pesoPokemon, pokemonMoves } from 'utils';
 
 export const PokeInfo = ({peso, altura, habilidades}) => {
   return (
-    <div className="grid grid-cols-3 mx-2">
+    <div className="grid grid-cols-3 mx-2 divide-x">
         <div className="grid gap-1 h-100">
                 <div className="flex items-center justify-center gap-2">
                 <TbWeight className="w-8 h-8"/>

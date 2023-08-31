@@ -33,7 +33,7 @@ export const pokemonMoves = (abilities) => {
 // - Types
 export const pokemonTipos = (tipos) => {
 
-    const estiloChip = "text-white font-medium mr-2 px-2.5 py-0.5 rounded-full capitalize list-none flex items-center space-x-2 pl-0"
+    const estiloChip = "text-white font-medium mr-2 px-2.5 py-0.5 rounded-full capitalize list-none flex items-center space-x-1 pl-0 pr-4"
 
     if(tipos[2]) {
         return (
@@ -76,7 +76,18 @@ export const pokemonTipos = (tipos) => {
 
 // - Bagdes 
 export const badgePokemons = (tipos) => {
-    <div className={`w-8 h-8 bg bg-${tipos[0].type.name}T bg-contain rounded-full`}></div>
+   
+    if (tipos[1]) {
+        return (
+            <>
+                <div className={`w-8 h-8 bg bg-${tipos[0].type.name}T bg-contain rounded-full`}></div>
+                <div className={`w-8 h-8 bg bg-${tipos[1].type.name}T bg-contain rounded-full`}></div>
+            </>
+        )    
+    }
+    return (
+        <div className={`w-8 h-8 bg bg-${tipos[0].type.name}T bg-contain rounded-full`}></div>
+    )
 }
 
 // - Imagem Pokemon
