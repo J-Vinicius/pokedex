@@ -24,7 +24,7 @@ export const Info = ({ pokemonData }) => {
     const tipoColor = pokemonData.types[0].type.name;
     
     return (
-    <div className={`w-full h-full bg-${tipoColor}`}>
+    <div className={`w-full -mb-2 bg-${tipoColor}`}>
         <div className="max-w-lg mx-auto">
             <PokeNav tipo={pokemonData.types[0].type.name} nome={pokemonData.name} id={pokemonData.id}/>
             <PokeImg tipo={pokemonData.types[0].type.name} nome={pokemonData.name} id={pokemonData.id}/>
