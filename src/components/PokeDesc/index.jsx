@@ -12,12 +12,8 @@ export const PokeDesc = ({data}) => {
         fetch(data.species.url).then(response => response.json()).then(receiveData => setDescricao(receiveData.flavor_text_entries[3].flavor_text));
     }
 
-    console.log(descricao);
-
-    
-
     return (
-        <div className="px-10 my-4">
+        <div className="px-4 md:px-10 my-4">
             <p>{descricao}</p>
         </div>
     )

@@ -37,7 +37,7 @@ export const Info = ({ pokemonData }) => {
                 {/* Descrção Pokemon */}
                 <PokeDesc data={pokemonData} />
                 <PokeTitulo tipo={pokemonData.types[0].type.name}>Status Base</PokeTitulo>
-                <div className="ml-10 w-[400px]">
+                <div className="ml-2 md:ml-10 w-96">
                     <table className="w-full text-sm text-right text-black border-spacing-x-2">
                         <tbody>
                             <tr>

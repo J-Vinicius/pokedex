@@ -17,9 +17,6 @@ function Navbar({pokemonFilter}) {
                     </div>
                     <input onChange={(e) => pokemonFilter(e.target.value.replace(/\s/g, '').toLowerCase())} type="text" id="search-navbar" className="block w-full p-2 pl-10 text-sm text-gray-900 rounded-full bg-gray-50" placeholder="Procurar" />
                     </div>
-                    {/* <div className="p-2 m-auto w-9 h-100 rounded-full bg-gray-50">
-                        <svg className="w-4 h-4 text-primary -mt-[1px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="m13 16.745c0-.414-.336-.75-.75-.75h-9.5c-.414 0-.75.336-.75.75s.336.75.75.75h9.5c.414 0 .75-.336.75-.75zm9-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm-4-5c0-.414-.336-.75-.75-.75h-14.5c-.414 0-.75.336-.75.75s.336.75.75.75h14.5c.414 0 .75-.336.75-.75z" fillRule="nonzero"/></svg>
-                    </div> */}
                 </div>
             </div>
         </nav>
