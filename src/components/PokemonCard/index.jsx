@@ -11,10 +11,10 @@ function PokemonCard({name, imagem, tipos}) {
             <div> 
                 <img className="rounded w-fit z-50" src={ImagemPokemon(imagem)} alt={name} />
             </div>
-            <div className="px-2 pt-0 bg-gray-800 from-gray-500 z-50">
+            <div className="px-2 pt-0 bg-gray-800 from-gray-500 z-50 relative">
                 <div className="py-2 w-full flex items-center justify-between">
                     <h5 className="text-2xl font-bold tracking-tight text-white capitalize">{name}</h5>
-                    <div className="md:flex space-x-2">
+                    <div className="flex space-x-2 absolute -right-4 -top-4">
                         {badgePokemons(tipos)}
                     </div>
                 </div>
